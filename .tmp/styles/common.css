@@ -1,0 +1,52 @@
+/* line 1, ../../app/styles/common.scss */
+#main-view-wrapper {
+  background-color: white;
+  z-index: 500;
+  padding: 10px;
+  border-radius: 2px;
+  opacity: 0.95;
+}
+
+/* line 10, ../../app/styles/common.scss */
+.saveButton {
+  background-color: green;
+  border-radius: 5px;
+  border: 1px solid #4c4c4c;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 5px 18px;
+  text-decoration: none;
+}
+
+/* line 24, ../../app/styles/common.scss */
+.saveButton:hover {
+  background-color: #006600;
+}
+
+/* line 27, ../../app/styles/common.scss */
+.saveButton:active {
+  position: relative;
+  top: 1px;
+}
+
+/* line 32, ../../app/styles/common.scss */
+.image {
+  height: 40px;
+  width: 30px;
+}
+
+/* line 36, ../../app/styles/common.scss */
+.navbar.navbar-default {
+  border-radius: 0px;
+  margin-bottom: 0px !important;
+}
+
+/* line 41, ../../app/styles/common.scss */
+.topmargin {
+  margin-top: 30px;
+}
+/*# sourceMappingURL=common.css.map */

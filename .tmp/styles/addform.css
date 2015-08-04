@@ -1,0 +1,19 @@
+/* line 1, ../../app/styles/addform.scss */
+.dropdown-item {
+  box-shadow: 0 5px 9px rgba(0, 0, 0, 0.4);
+}
+
+/* line 4, ../../app/styles/addform.scss */
+.dropdown-item:hover {
+  background-color: aliceblue;
+  cursor: pointer;
+}
+
+/* line 8, ../../app/styles/addform.scss */
+.dropdown {
+  position: absolute !important;
+  top: 33px;
+  z-index: 999;
+}
+
+/*# sourceMappingURL=addform.css.map */

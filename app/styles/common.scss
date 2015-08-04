@@ -1,0 +1,43 @@
+#main-view-wrapper {
+ // margin-top: 10px;
+  background-color: white; 
+  z-index: 500;
+  padding: 10px;
+  border-radius: 2px;
+  opacity: 0.95;
+
+}
+.saveButton {
+	
+	background-color: green;
+	border-radius:5px;
+	border:1px solid #4c4c4c;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:5px 18px;
+	text-decoration:none;
+}
+.saveButton:hover {
+	background-color:#006600;
+}
+.saveButton:active {
+	position:relative;
+	top:1px;
+}
+
+.image{
+	height: 40px;
+	width: 30px;
+}
+.navbar.navbar-default{
+	border-radius:0px;
+	margin-bottom:0px !important;
+}
+
+.topmargin{
+	margin-top:30px;
+}
