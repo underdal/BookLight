@@ -1,0 +1,73 @@
+.row {
+	padding: 5px;
+	display: table;
+	width: 100%;
+}
+.form-control{
+	&.searching{
+		border-radius: 3px !important;
+		height: 40px !important;
+	}
+}
+
+.input-group-lg{
+	padding-left: 12px !important;
+	padding-right: 3px !important;
+}
+
+.book-table{
+	border: solid grey;
+	border-width:1px 0;
+}
+.padding{
+	padding-top: 10px;
+}
+
+.cell{
+	&.text-header{
+		font-size: 14px;
+		text-align: left;
+		&.right{
+			text-align: right;
+		}
+	}
+	&.text-title {
+		font-size: 16px;
+		font-weight: bold;
+		text-align: left;
+		padding: 5px; 
+	}
+	&.text-available{
+		font-size: 14px;
+		font-weight: bold;
+		
+	}
+	&.color-available{
+		background-color: green;
+		font-size: 14px;
+		font-weight: bold;
+		color: white;
+		text-align: center;
+	}
+	&.color-unavaliable{
+		background-color: red;
+		font-size: 14px;
+		font-weight: bold;
+	}
+
+}
+
+.glyphicon{
+	font-size: large;
+	&.large{
+		font-size: x-large;
+	}
+	&.red{
+		color: red;
+	}
+	&.green{
+		color: green;
+	}
+
+
+}

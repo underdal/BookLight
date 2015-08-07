@@ -1,13 +1,22 @@
 'use strict';
 
 bookLightApp.service('BookService',
-	['$resource', '$http','booksResource', 'addNewBookUrl', function($resource, $http, booksResource, addNewBookUrl){
+	['$resource', '$http','booksResource', function($resource, $http, booksResource){
 
-	this.books = function(){
-	    return $resource(booksResource);
-	};
-	this.addNewBook = function(){
-		return $resource(addNewBookUrl);
+	this.books = function(callback, param){
+		var query = new Parse.Query("books");
+
+	    if( query && query.length > 0){
+	    	query.equalTo("office", param);
+	    };
+	    query.find().
+			  then(function(response) {
+			  	
+			  	callback(response);
+			  });
+	
+
+	    //return $resource(booksResource);
 	};
 
 	this.getBookData = function(query, callback){

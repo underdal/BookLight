@@ -1,0 +1,80 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		2BFAFB431A7B7703007BAA73 /* index.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = index.js; sourceTree = "<group>"; };
+		2BFAFB481A7B79A1007BAA73 /* package.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = package.json; sourceTree = "<group>"; };
+		2BFAFB491A7B7A12007BAA73 /* public */ = {isa = PBXFileReference; lastKnownFileType = folder; path = public; sourceTree = "<group>"; };
+		2BFAFB4B1A7B7B3C007BAA73 /* StartMongoDB.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = StartMongoDB.sh; sourceTree = "<group>"; };
+		2BFAFB4E1A7B7C8A007BAA73 /* collectionDriver.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = collectionDriver.js; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		2BFAFB3C1A7B76E7007BAA73 = {
+			isa = PBXGroup;
+			children = (
+				2BFAFB431A7B7703007BAA73 /* index.js */,
+				2BFAFB4E1A7B7C8A007BAA73 /* collectionDriver.js */,
+				2BFAFB4B1A7B7B3C007BAA73 /* StartMongoDB.sh */,
+				2BFAFB481A7B79A1007BAA73 /* package.json */,
+				2BFAFB491A7B7A12007BAA73 /* public */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		2BFAFB3D1A7B76E7007BAA73 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+			};
+			buildConfigurationList = 2BFAFB401A7B76E7007BAA73 /* Build configuration list for PBXProject "NodeBackend" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2BFAFB3C1A7B76E7007BAA73;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		2BFAFB411A7B76E7007BAA73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		2BFAFB421A7B76E7007BAA73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2BFAFB401A7B76E7007BAA73 /* Build configuration list for PBXProject "NodeBackend" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BFAFB411A7B76E7007BAA73 /* Debug */,
+				2BFAFB421A7B76E7007BAA73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2BFAFB3D1A7B76E7007BAA73 /* Project object */;
+}

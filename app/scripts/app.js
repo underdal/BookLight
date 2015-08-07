@@ -9,12 +9,15 @@
  * Main module of the application.
  */
 var bookLightApp = angular.module('bookLightApp', [
-    //'ngAnimate',
+    'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ui.bootstrap',
+    'parse-angular'
+
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -28,13 +31,22 @@ var bookLightApp = angular.module('bookLightApp', [
         controller: 'NewbookCtrl',
         controllerAs: 'newbook'
       })
+      .when('/mybooks', {
+        templateUrl: 'views/mybooks.html',
+        controller: 'BookCtrl',
+        controllerAs: 'mybooks'
+      })
       .otherwise({
         redirectTo: '/'
       });
   });
+  
+  Parse.initialize("OAcPvUQ8rtuke551dz7ruo6bFRb0e8QCPIuTck60", "dDccYxiSV26jS55sHzM4wOaWpaFb5k5FuzahfoR9");
 
 //apiary-mock:
 var baseApiUrl  = 'http://private-135c7-booklight.apiary-mock.com/';
+//"http://localhost:3001/" 
+//'http://private-135c7-booklight.apiary-mock.com/';
 
 bookLightApp.value('booksResource',baseApiUrl+'books/');
-bookLightApp.value('addNewBookUrl', baseApiUrl + 'books/update/')
+

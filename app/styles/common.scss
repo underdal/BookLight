@@ -7,6 +7,31 @@
   opacity: 0.95;
 
 }
+.subheading-styling{
+	background-color: aliceblue;
+    
+}
+.returnButton {
+	
+	background-color: red;
+	border-radius:5px;
+	border:1px solid #4c4c4c;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:3px 7px;
+	text-decoration:none;
+}
+.returnButton:hover {
+	background-color:#cc0000;
+}
+.returnButton:active {
+	position:relative;
+	top:1px;
+}
 .saveButton {
 	
 	background-color: green;
@@ -16,7 +41,7 @@
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Arial;
-	font-size:15px;
+	font-size:13px;
 	font-weight:bold;
 	padding:5px 18px;
 	text-decoration:none;
@@ -27,6 +52,13 @@
 .saveButton:active {
 	position:relative;
 	top:1px;
+}
+.collapse-text{
+	padding: 15px;
+	&.borrowedBy{
+		float:right;
+
+	}
 }
 
 .image{

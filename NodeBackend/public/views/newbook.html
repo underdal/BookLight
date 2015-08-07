@@ -1,0 +1,51 @@
+<div ng-controller="NewbookCtrl">
+	<h3>Add book</h3>
+	<form name="addbookForm" novalidate ng-class="{'submit-clicked': submitFailed === true}">
+		<div class="table">
+			<div class="section">
+				<div class="row">
+                    <div class="col-sm-9">
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-3">Title</div>
+                            <div class="col-xs-6 col-sm-9">
+                                <input type="text" maxlength="50" style="width:100%" class="form-control" ng-model="formTitle" ng-change="titleInputDidChange()" id="newBookTitle" name="title" required>
+                                <ul class="list-group dropdown" ng-if="matchingBooks && matchingBooks.length>0">
+                                    <li class="list-group-item dropdown-item" ng-click="changeValue(item)" ng-repeat="item in matchingBooks">
+                                        {{item.volumeInfo.title}}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-3">Author</div>
+                            <div class="col-xs-6 col-sm-9">
+                                <input type="text" maxlength="50" style="width:100%" class="form-control" ng-model="formAuthor" name="author" required></div>
+                            </div>    
+                            <div class="row">
+                                <div class="col-xs-3 col-sm-3">Office</div>
+                                <div class="col-xs-9 col-sm-9">
+                                    <select class="form-control" style="padding:0px" ng-model= "office" ng-options="office.office for office in offices | orderBy: 'office'" name="office" required>
+                                    </select>
+                                </div>
+                            </div>
+                             <div class="row">
+                                <div class="col-xs-2 col-xs-offset-9 col-sm-1 col-sm-offset-9">
+                                    <button class="saveButton" title="Add" style="cursor:pointer" ng-click="addNewbookJSON(formTitle, formAuthor, office.office, formImage);">Save
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <img ng-src="{{formImgSrc}}" style="width:100px;height:140px;">
+                        </div>
+
+                    </div>
+
+
+                   
+          </div>
+      </div>
+  </form>
+</div>
+

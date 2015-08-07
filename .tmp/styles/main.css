@@ -22,35 +22,36 @@
 .book-table {
   border: solid grey;
   border-width: 1px 0;
+  cursor: pointer;
 }
 
-/* line 22, ../../app/styles/table.scss */
+/* line 23, ../../app/styles/table.scss */
 .padding {
   padding-top: 10px;
 }
 
-/* line 27, ../../app/styles/table.scss */
+/* line 28, ../../app/styles/table.scss */
 .cell.text-header {
   font-size: 14px;
   text-align: left;
 }
-/* line 30, ../../app/styles/table.scss */
+/* line 31, ../../app/styles/table.scss */
 .cell.text-header.right {
   text-align: right;
 }
-/* line 34, ../../app/styles/table.scss */
+/* line 35, ../../app/styles/table.scss */
 .cell.text-title {
   font-size: 16px;
   font-weight: bold;
   text-align: left;
   padding: 5px;
 }
-/* line 40, ../../app/styles/table.scss */
+/* line 41, ../../app/styles/table.scss */
 .cell.text-available {
   font-size: 14px;
   font-weight: bold;
 }
-/* line 45, ../../app/styles/table.scss */
+/* line 46, ../../app/styles/table.scss */
 .cell.color-available {
   background-color: green;
   font-size: 14px;
@@ -58,26 +59,26 @@
   color: white;
   text-align: center;
 }
-/* line 52, ../../app/styles/table.scss */
+/* line 53, ../../app/styles/table.scss */
 .cell.color-unavaliable {
   background-color: red;
   font-size: 14px;
   font-weight: bold;
 }
 
-/* line 60, ../../app/styles/table.scss */
+/* line 61, ../../app/styles/table.scss */
 .glyphicon {
   font-size: large;
 }
-/* line 62, ../../app/styles/table.scss */
+/* line 63, ../../app/styles/table.scss */
 .glyphicon.large {
   font-size: x-large;
 }
-/* line 65, ../../app/styles/table.scss */
+/* line 66, ../../app/styles/table.scss */
 .glyphicon.red {
   color: red;
 }
-/* line 68, ../../app/styles/table.scss */
+/* line 69, ../../app/styles/table.scss */
 .glyphicon.green {
   color: green;
 }
@@ -98,8 +99,13 @@
 }
 
 /* line 10, ../../app/styles/common.scss */
-.saveButton {
-  background-color: green;
+.subheading-styling {
+  background-color: aliceblue;
+}
+
+/* line 14, ../../app/styles/common.scss */
+.returnButton {
+  background-color: red;
   border-radius: 5px;
   border: 1px solid #4c4c4c;
   display: inline-block;
@@ -108,34 +114,69 @@
   font-family: Arial;
   font-size: 15px;
   font-weight: bold;
+  padding: 3px 7px;
+  text-decoration: none;
+}
+
+/* line 28, ../../app/styles/common.scss */
+.returnButton:hover {
+  background-color: #cc0000;
+}
+
+/* line 31, ../../app/styles/common.scss */
+.returnButton:active {
+  position: relative;
+  top: 1px;
+}
+
+/* line 35, ../../app/styles/common.scss */
+.saveButton {
+  background-color: green;
+  border-radius: 5px;
+  border: 1px solid #4c4c4c;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 13px;
+  font-weight: bold;
   padding: 5px 18px;
   text-decoration: none;
 }
 
-/* line 24, ../../app/styles/common.scss */
+/* line 49, ../../app/styles/common.scss */
 .saveButton:hover {
   background-color: #006600;
 }
 
-/* line 27, ../../app/styles/common.scss */
+/* line 52, ../../app/styles/common.scss */
 .saveButton:active {
   position: relative;
   top: 1px;
 }
 
-/* line 32, ../../app/styles/common.scss */
+/* line 56, ../../app/styles/common.scss */
+.collapse-text {
+  padding: 15px;
+}
+/* line 58, ../../app/styles/common.scss */
+.collapse-text.borrowedBy {
+  float: right;
+}
+
+/* line 64, ../../app/styles/common.scss */
 .image {
   height: 40px;
   width: 30px;
 }
 
-/* line 36, ../../app/styles/common.scss */
+/* line 68, ../../app/styles/common.scss */
 .navbar.navbar-default {
   border-radius: 0px;
   margin-bottom: 0px !important;
 }
 
-/* line 41, ../../app/styles/common.scss */
+/* line 73, ../../app/styles/common.scss */
 .topmargin {
   margin-top: 30px;
 }
