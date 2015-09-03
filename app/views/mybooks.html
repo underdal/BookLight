@@ -21,7 +21,7 @@
     </tr>
 </table>
 <table style = "width: 100%">
-    <tr ng-repeat="book in books" class="book-table">
+    <tr ng-repeat="book in books | filter: attributes.owner='David Karlsson'" class="book-table">
         <td class="padding" style="width:10%">
             <img ng-src="{{book.attributes.cover}}" class="image"> 
         </td>
