@@ -1,51 +1,69 @@
 <div ng-controller="NewbookCtrl">
-	<h3>Add book</h3>
-	<form name="addbookForm" novalidate ng-class="{'submit-clicked': submitFailed === true}">
-		<div class="table">
-			<div class="section">
-				<div class="row">
-                    <div class="col-sm-9">
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-3">Title</div>
-                            <div class="col-xs-6 col-sm-9">
-                                <input type="text" maxlength="50" style="width:100%" class="form-control" ng-model="formTitle" ng-change="titleInputDidChange()" id="newBookTitle" name="title" required>
-                                <ul class="list-group dropdown" ng-if="matchingBooks && matchingBooks.length>0">
-                                    <li class="list-group-item dropdown-item" ng-click="changeValue(item)" ng-repeat="item in matchingBooks">
-                                        {{item.volumeInfo.title}}
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-6 col-sm-3">Author</div>
-                            <div class="col-xs-6 col-sm-9">
-                                <input type="text" maxlength="50" style="width:100%" class="form-control" ng-model="formAuthor" name="author" required></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-9 col-sm-offset-3">{{formDescription}}</div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-3 col-sm-3">Office</div>
-                            <div class="col-xs-9 col-sm-9">
-                                <select class="form-control" style="padding:0px" ng-model= "office" ng-options="office.office for office in offices | orderBy: 'office'" name="office" required>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-2 col-xs-offset-9 col-sm-1 col-sm-offset-9">
-                                <button class="saveButton" title="Add" style="cursor:pointer" ng-click="addNewbookJSON(formTitle, formAuthor, formDescription, office.office, formImgSrc);">Save
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+	<h3>{{ 'add_book' | translate}}</h3> 
+</div>
+<form name="addbookForm" novalidate ng-class="{'submit-clicked': submitFailed === true}">
+  <div class="table">
+     <div class="section">
+        <div class="row" ng-show="showSuccessAlert showErrorAlert">
+            <div class="col-sm-9">
+                <div class="row">
+               <div class="col-xs-6 col-sm-3"></div>
+               <div class="col-xs-6 col-sm-9">
+                   <div class="alert alert-success" ng-show="showSuccessAlert" >
+                    <button type="button" class="close" data-ng-click="switchBool('showSuccessAlert')">×</button> <strong>{{'saved_book_success' | translate}}</strong></div>
 
-                    <div class="col-sm-3">
-                        <img ng-src="{{formImgSrc}}" style="width:100px;height:140px;">
-                    </div>
-
+                    <div class="alert alert-danger" ng-show="showErrorAlert" >
+                    <button type="button" class="close" data-ng-click="switchBool('showErrorAlert')">×</button> <strong>{{'saved_book_error' | translate}}</strong></div>
                 </div>
             </div>
+            <div class="col-sm-3"></div>
+            </div>
         </div>
-    </form>
+        <div class="row">
+            <div class="col-sm-9">
+
+                <div class="row">
+                    <div class="col-xs-6 col-sm-3">{{'title' | translate}}</div>
+                    <div class="col-xs-6 col-sm-9">
+                        <input type="text" maxlength="50" style="width:100%" class="form-control" ng-model="formTitle" ng-change="titleInputDidChange()" id="newBookTitle" name="title" required>
+                        <ul class="list-group dropdown" ng-if="matchingBooks && matchingBooks.length>0">
+                            <li class="list-group-item dropdown-item" ng-click="changeValue(item)" ng-repeat="item in matchingBooks">
+                                {{item.volumeInfo.title}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-3">{{'author' | translate}}</div>
+                    <div class="col-xs-6 col-sm-9">
+                        <input type="text" maxlength="50" style="width:100%" class="form-control" ng-model="formAuthor" name="author" required></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-9 col-sm-offset-3">{{formDescription}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-3 col-sm-3">{{'office' | translate}}</div>
+                        <div class="col-xs-9 col-sm-9">
+                            <select class="form-control" style="padding:0px" ng-model= "office" ng-options="office.office for office in offices | orderBy: 'office'" name="office" required>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2 col-xs-offset-9 col-sm-1 col-sm-offset-9">
+                            <button class="saveButton" title="Add" style="cursor:pointer" ng-click="addNewbook(formTitle, formAuthor, formDescription, office.office, formImgSrc);">{{'save' | translate}}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <img ng-src="{{formImgSrc}}" style="width:100px;height:140px;">
+                </div>
+                <!--button ng-click="pressedSave(book);" ng-controller="BookCtrl">Test</button-->
+
+            </div>
+        </div>
+    </div>
+</form>
 </div>
 

@@ -1,22 +1,22 @@
-<h3>My books</h3>
+<h3>{{'my_books' | translate}}</h3>
 <table class="">
     <tr style="width:100%">
           <td style="width:10%">
             <span class="cell text-header"></span>
         </td>
         <td style="width:25%">
-            <span class="cell text-header">Titel</span>
+            <span class="cell text-header">{{'title' | translate}}</span>
         </td>
 
         <td style="width:25%">
-            <span class="cell text-header">Author</span>
+            <span class="cell text-header">{{'author' | translate}}</span>
         </td>
       
         <td style="width:20%">
-            <span class="cell text-header">Borrowed By</span>
+            <span class="cell text-header">{{'borrowed_by' | translate}}</span>
         </td>
         <td style="width:10%">
-            <span class="cell text-header right">Availability</span>
+            <span class="cell text-header right">{{'availability' | translate}}</span>
         </td>
     </tr>
 </table>
@@ -46,25 +46,25 @@
     </tr>
 </table>
 
-<h3>My borrowed books</h3>
+<h3>{{'my_borrowed_books' | translate}}</h3>
 <table class="">
     <tr style="width:100%">
         <td style="width:10%">
             <span class="cell text-header"></span>
         </td>
         <td style="width:25%">
-            <span class="cell text-header">Titel</span>
+            <span class="cell text-header">{{'title' | translate}}</span>
         </td>
 
         <td style="width:25%">
-            <span class="cell text-header">Author</span>
+            <span class="cell text-header">{{'author' | translate}}</span>
         </td>
         
         <td style="width:20%">
-            <span class="cell text-header">Owner</span>
+            <span class="cell text-header">{{'owner' | translate}}</span>
         </td>
         <td style="width:10%">
-            <span class="cell text-header right">Availability</span>
+            <span class="cell text-header right">{{'availability' | translate}}</span>
         </td>
     </tr>
 </table>
@@ -88,7 +88,7 @@
         </td>
         
         <td style="width:12%">
-            <button class="returnButton" title="Return" style="cursor:pointer" ng-click="borrow({{book.bookID}});">Return
+            <button class="returnButton" title="Return" style="cursor:pointer" ng-click="borrow({{book.bookID}});">{{'return_book' | translate}}
             </button>
         </td>
     </tr>

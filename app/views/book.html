@@ -18,16 +18,16 @@
             <span class="cell text-header"></span>
         </td>
         <td style="width:33%">
-            <span class="cell text-header">Titel</span>
+            <span class="cell text-header">{{'title' | translate}}</span>
         </td>
         <td style="width:25%">
-            <span class="cell text-header">Author</span>
+            <span class="cell text-header">{{'author' | translate}}</span>
         </td>
         <td style="width:20%">
-            <span class="cell text-header">Owner</span>
+            <span class="cell text-header">{{'owner' | translate}}</span>
         </td>
         <td style="width:10%">
-            <span class="cell text-header right">Availability</span>
+            <span class="cell text-header right">{{'availability' | translate}}</span>
         </td>
     </tr>
 </table>
@@ -61,23 +61,20 @@
              
         </td>
         <td colspan="2" class="collapse-text">
-            <b>Description:</b> </br> </br>
+            <b>{{'description' | translate}}:</b> </br> </br>
             {{book.attributes.description}}
         </td>
         <td ng-if="book.attributes.available ==true" colspan="1">
         </td>
          
         <td ng-if="book.attributes.available==true">
-            <button class="saveButton" title="Borrow" ng-click="borrow({{book.bookID}});">Borrow
+            <button class="saveButton" title="Borrow" ng-click="borrow({{book.bookID}});">{{'borrow' | translate}}
             </button>
         </td>
         <td ng-if="book.attributes.available==false" colspan="2" style="float:right" class="collapse-text">
-           <b> Borrowed by </br> {{book.borrowedBy.firstName}} {{book.attributes.borrowedBy}} </b>
+           <b> {{'borrowed_by' | translate}} </br> {{book.borrowedBy.firstName}} {{book.attributes.borrowedBy}} </b>
         </td>
     </tr>
-
-    <button ng-click="pressedSave(book);" ng-controller="BookCtrl">Test</button>
-
 </table>
 
 

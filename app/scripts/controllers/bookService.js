@@ -29,13 +29,11 @@ bookLightApp.service('BookService',
 	a desired input value corresponding to a success/failure.
 	*/
 	this.saveBook = function (book, callback) {
+	
+		var Books = Parse.Object.extend("books");
+		var books = new Books(book);
 
-
-
-		var TestBook = Parse.Object.extend("TestBook");
-		var testBook = new TestBook();
-
-		testBook.save(null, {
+		books.save(null, {
 			success: function ()
 			{
 				callback(true);

@@ -16,7 +16,8 @@ var bookLightApp = angular.module('bookLightApp', [
     'ngSanitize',
     'ngTouch',
     'ui.bootstrap',
-    'parse-angular'
+    'parse-angular',
+    'pascalprecht.translate'
 
   ])
   .config(function ($routeProvider) {
@@ -40,6 +41,7 @@ var bookLightApp = angular.module('bookLightApp', [
         redirectTo: '/'
       });
   });
+
   
   Parse.initialize("OAcPvUQ8rtuke551dz7ruo6bFRb0e8QCPIuTck60", "dDccYxiSV26jS55sHzM4wOaWpaFb5k5FuzahfoR9");
 

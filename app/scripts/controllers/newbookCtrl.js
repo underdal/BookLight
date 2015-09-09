@@ -5,7 +5,8 @@ bookLightApp.controller('NewbookCtrl', ['$scope', '$rootScope', '$http', '$resou
 
     var debounce ={};
     $scope.formTitle="";
-    $scope.formImgSrc ="https://placeholdit.imgix.net/~text?txtsize=9&txt=100%C3%97140&w=100&h=140";
+    var defaultImage = "https://placeholdit.imgix.net/~text?txtsize=9&txt=100%C3%97140&w=100&h=140"; 
+    $scope.formImgSrc = defaultImage; 
 
 
     $scope.offices = [
@@ -59,7 +60,8 @@ bookLightApp.controller('NewbookCtrl', ['$scope', '$rootScope', '$http', '$resou
     
     
    };
-    $scope.addNewbookJSON = function(titleName, authorName, bookDescription, location, bookCover){
+
+   $scope.addNewbook = function (titleName, authorName, bookDescription, location, bookCover){
 
         var dataObj = {
             title: titleName,
@@ -69,20 +71,38 @@ bookLightApp.controller('NewbookCtrl', ['$scope', '$rootScope', '$http', '$resou
             cover: bookCover, 
             available: true
         };
-        console.log(dataObj);
-
-        debugger;
-        BookService.books().save(dataObj);
+            console.log('pressed save '+titleName);
+            var callback = function (successful)
+            {
+                if (successful){
+                    // add code to display successful save
+                    $scope.showSuccessAlert = true;
+                }
+                else {
+                    // add code to display failure
+                     $scope.showErrorAlert = true;
+                    
+                }
+            };
+            BookService.saveBook(dataObj, callback);
+            // clear form
+            $scope.formTitle = null;
+            $scope.formAuthor = null; 
+            $scope.formImgSrc = defaultImage;
+            $scope.matchingBooks =[];
+            $scope.formDescription = null;
+        };
+  
         //var res = $resource.post(addNewBook, dataObj);
         //res.success(function(data){
         //    $rootScope.$broadcast('updateBooks', data);
         //});
 
-    };
+    
     $scope.changeValue = function(bookInfo){
         $scope.formTitle = bookInfo.volumeInfo.title;
         $scope.formAuthor = bookInfo.volumeInfo.authors[0]; 
-        $scope.formImgSrc = bookInfo.volumeInfo.imageLinks ? bookInfo.volumeInfo.imageLinks.smallThumbnail : "https://placeholdit.imgix.net/~text?txtsize=9&txt=100%C3%97140&w=100&h=140";
+        $scope.formImgSrc = bookInfo.volumeInfo.imageLinks ? bookInfo.volumeInfo.imageLinks.smallThumbnail : defaultImage;
         $scope.matchingBooks =[];
         $scope.formDescription = bookInfo.volumeInfo.description;
 
