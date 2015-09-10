@@ -52,7 +52,7 @@ bookLightApp.controller('NewbookCtrl', ['$scope', '$rootScope', '$http', '$resou
     var titleInput = $scope.formTitle;
     var newTitleInput ="";
     for (var i =0; i<titleInput.length; i++) {
-        if(titleInput[i] == " "){
+        if(titleInput[i] === " "){
             newTitleInput += "%20";
         }else{
             newTitleInput += titleInput[i];

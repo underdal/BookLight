@@ -8,20 +8,20 @@ bookLightApp.controller('BookCtrl', ['$scope','BookService',
         	$scope.books = data;	
         });
 
-         // $scope.deleteBook = function(bookID){
-         //    var callback = function (successful){
-         //        if (successful){
-         //            // add code to display successful save
-         //            $scope.showSuccessAlert = true;
-         //        }
-         //        else {
-         //            // add code to display failure
-         //             $scope.showErrorAlert = true;
+         $scope.delete = function(bookID){
+            var callback = function (successful){
+                if (successful){
+                    // add code to display successful save
+                    $scope.showSuccessAlert = true;
+                }
+                else {
+                    // add code to display failure
+                     $scope.showErrorAlert = true;
                     
-         //        }
-         //    };
-         //    BookService.deleteBook(bookID, callback);
-         // };
+                }
+            };
+            BookService.deleteBook(bookID, callback);
+         };
 
         
 

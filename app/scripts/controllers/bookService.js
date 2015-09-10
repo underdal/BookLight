@@ -8,7 +8,7 @@ bookLightApp.service('BookService',
 
 	    if( query && query.length > 0){
 	    	query.equalTo("office", param);
-	    };
+	    }
 	    query.find().
 			  then(function(response) {
 			  	
@@ -45,19 +45,19 @@ bookLightApp.service('BookService',
 		});
 	};
 
-	// this.deleteBook = function(bookID){
-	// 	var Books = Parse.obj.extend("books");
-	// 	var books = new Books(book);
+	this.deleteBook = function(bookID){
+		var Books = Parse.Object.extend("books");
+		var query = new Parse.Query(Books);
 
-	// 	books.get(bookID, {
-	// 		success: function(toBeDeleted){
-	// 			toBeDeleted.destroy({});
-	// 		},
-	// 		error: function(object, error){
+		query.get(bookID, {
+			success: function(toBeDeleted){
+				toBeDeleted.destroy({});
+			},
+			error: function(object, error){
 
-	// 		}
-	// 	});
-	// };
+			}
+		});
+	};
 
 
 
@@ -71,8 +71,9 @@ bookLightApp.service('BookService',
 			  }, function(response) {
 			  	return ["No books found..."];
 			  });
-				}else
+				}else{
 				return [];
-	}
+			}
+	};
 
 }]);
