@@ -37,6 +37,15 @@ bookLightApp.controller('NewbookCtrl', ['$scope', '$rootScope', '$http', '$resou
         $scope.matchingBooks = data;
 
     }
+
+    $(document).click(function(){
+    $("#bookDropdown").slideUp(); 
+    });
+
+    $("#bookDropdown").click(function(e){
+     e.stopPropagation(); 
+    });
+
      
     //listen for change on "$scope.formTitle"
    $scope.titleInputDidChange = function(){

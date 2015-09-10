@@ -15,7 +15,8 @@ bookLightApp.config(function($translateProvider) {
 	borrowed_by: 'Borrowed by',
 	my_books: 'My books', 
 	my_borrowed_books: 'My borrowed books',
-	return_book: 'return'
+	return_book: 'Return',
+	oslo: 'Oslo'
   });
    $translateProvider.preferredLanguage('en');
 });

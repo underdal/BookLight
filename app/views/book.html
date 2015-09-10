@@ -1,7 +1,7 @@
 <div id="search-wrapper">
 	<div class="row">
 		<div class="input-group-lg col-xs-12 col-md-9">
-            <input type="text" class="form-control searching" style="width: 100%" placeholder="" ng-model="query" ng-change="updateQuery()"/>
+            <input ng-model="search.attributes.title" type="text" class="form-control searching" style="width: 100%" placeholder="" ng-model="query" ng-change="updateQuery()"/>
             <span class="glyphicon glyphicon-search form-control-feedback"></span>
         </div>
 
@@ -10,7 +10,7 @@
                 <!--option value=""></option-->
             </select>
         </div>
-	</div>
+    </div>
 </div>
 <table class="topmargin">
     <tr style="width:100%">
@@ -31,7 +31,7 @@
         </td>
     </tr>
 </table>
-<table style = "width: 100%" ng-repeat="book in books | filter:searchBook">
+<table style = "width: 100%" ng-repeat="book in books | filter: search | orderBy: 'attributes.title'">
     <tr  class="book-table" ng-class="!isCollapsed ? '' : 'subheading-styling'" ng-click="isCollapsed = !isCollapsed">
         <td class="padding" style="width:12%">
             <img ng-src="{{book.attributes.cover}}" class="image"> 
@@ -58,7 +58,7 @@
 
     <tr collapse="!isCollapsed">
         <td>
-             
+
         </td>
         <td colspan="2" class="collapse-text">
             <b>{{'description' | translate}}:</b> </br> </br>
@@ -66,15 +66,15 @@
         </td>
         <td ng-if="book.attributes.available ==true" colspan="1">
         </td>
-         
+
         <td ng-if="book.attributes.available==true">
-            <button class="saveButton" title="Borrow" ng-click="borrow({{book.bookID}});">{{'borrow' | translate}}
+            <button class="saveButton"  ng-click="borrow();">{{'borrow' | translate}}
             </button>
         </td>
         <td ng-if="book.attributes.available==false" colspan="2" style="float:right" class="collapse-text">
-           <b> {{'borrowed_by' | translate}} </br> {{book.borrowedBy.firstName}} {{book.attributes.borrowedBy}} </b>
-        </td>
-    </tr>
+         <b> {{'borrowed_by' | translate}} </br> {{book.borrowedBy.firstName}} {{book.attributes.borrowedBy}} </b>
+     </td>
+ </tr>
 </table>
 
 

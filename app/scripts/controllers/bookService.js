@@ -45,6 +45,22 @@ bookLightApp.service('BookService',
 		});
 	};
 
+	// this.deleteBook = function(bookID){
+	// 	var Books = Parse.obj.extend("books");
+	// 	var books = new Books(book);
+
+	// 	books.get(bookID, {
+	// 		success: function(toBeDeleted){
+	// 			toBeDeleted.destroy({});
+	// 		},
+	// 		error: function(object, error){
+
+	// 		}
+	// 	});
+	// };
+
+
+
 	this.getBookData = function(query, callback){
 		//Get json from http books...
 		if( query && query.length > 0){
