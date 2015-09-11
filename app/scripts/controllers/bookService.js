@@ -59,7 +59,20 @@ bookLightApp.service('BookService',
 		});
 	};
 
+	this.updateBook = function(bookID, availability, borrowerName){
+		var Books = Parse.Object.extend("books");
+		var books = new Books();
+		books.id = bookID;
+		books.set("available", availability);
+		books.set("borrowedBy", borrowerName);
+		books.save(null, {
+			success: function(books){
+			},
+			error: function(books, error){
 
+			}
+		});
+	};
 
 	this.getBookData = function(query, callback){
 		//Get json from http books...

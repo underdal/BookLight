@@ -21,6 +21,10 @@
     <div class="book-info">
       <h2 class="book-title">{{book.attributes.title}}</h2>
       <p class="book-author">{{book.attributes.author}}</p>
+      <div ng-if="book.attributes.available==true">
+            <button class="saveButton"  ng-click="borrow(book.id);">{{'borrow' | translate}}
+            </button>
+        </div>
     </div>
     <div class="book-description">
       {{book.attributes.description}}
@@ -28,7 +32,7 @@
   </li>
 </ul>
 
-<table class="topmargin">
+<!--table class="topmargin">
     <tr style="width:100%">
         <td style="width:12%">
             <span class="cell text-header"></span>
@@ -84,13 +88,13 @@
         </td>
 
         <td ng-if="book.attributes.available==true">
-            <button class="saveButton"  ng-click="borrow();">{{'borrow' | translate}}
+            <button class="saveButton"  ng-click="borrow(book.id);">{{'borrow' | translate}}
             </button>
         </td>
         <td ng-if="book.attributes.available==false" colspan="2" style="float:right" class="collapse-text">
          <b> {{'borrowed_by' | translate}} </br> {{book.borrowedBy.firstName}} {{book.attributes.borrowedBy}} </b>
      </td>
  </tr>
-</table>
+</table-->
 
 
