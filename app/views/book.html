@@ -12,6 +12,22 @@
         </div>
     </div>
 </div>
+
+<ul class="books">
+  <li ng-repeat="book in books | filter: search | orderBy: 'attributes.title'" class="book col-sm-3 clearfix">
+    <div class="book-cover">
+      <img ng-src="{{book.attributes.cover}}" class="image img-responsive">      
+    </div>
+    <div class="book-info">
+      <h2 class="book-title">{{book.attributes.title}}</h2>
+      <p class="book-author">{{book.attributes.author}}</p>
+    </div>
+    <div class="book-description">
+      {{book.attributes.description}}
+    </div>
+  </li>
+</ul>
+
 <table class="topmargin">
     <tr style="width:100%">
         <td style="width:12%">

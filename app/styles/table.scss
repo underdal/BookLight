@@ -1,3 +1,111 @@
+/* Fallback styles */
+.book-cover {
+  display: inline-block;
+  box-shadow: 5px 5px 20px #333;
+}
+
+.book-cover img { 
+  vertical-align: middle; 
+  width: 100%;
+}
+
+.book-cover {
+  width: 75%; 
+}
+
+/*
+ *  In order for this to work, you must use Modernizer
+ *  to detect 3D transform browser support. This will add
+ *  a "csstransforms3d" class to the HTML element.
+ *
+ *  Visit http://modernizr.com/ for installation instructions
+ */
+
+.csstransforms3d  .books {
+  -moz-perspective: 100px;
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+.csstransforms3d  .book-cover {
+  position: relative;
+  -moz-perspective: 100px;
+  outline: 1px solid transparent; /* Helps smooth jagged edges in Firefox */
+  box-shadow: none;
+  margin: 0;
+}
+
+.csstransforms3d  .book:hover .book-cover {
+  -moz-transform: rotateY(-3deg);
+  -webkit-transform: perspective(100) rotateY(-3deg);
+
+}
+
+.csstransforms3d  .book-cover img {
+  position: relative;
+}
+
+.csstransforms3d  .book-cover:before,
+.csstransforms3d  .book-cover:after {
+  position: absolute;
+  top: 2%;
+  height: 96%;
+  content: ' ';
+  z-index: -1;
+}
+
+.csstransforms3d  .book-cover:before {
+  width: 100%;
+  left: 7.5%;
+  background-color: #5a2d18;
+  box-shadow: 5px 5px 20px #333;
+}
+
+.csstransforms3d  .book-cover:after {
+  width: 5%;
+  left: 100%;
+  background-color: #EFEFEF;
+  box-shadow: inset 0px 0px 5px #aaa;
+  -moz-transform: rotateY(20deg);
+  -webkit-transform: perspective(100) rotateY(20deg);
+}
+
+
+ul.books {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  
+  .book {
+    float: none;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+  }
+  .book-cover {
+    display: inline-block;    
+    vertical-align: top;
+  }
+  
+  .book-info {
+    text-align: center;
+    
+    .book-title {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    
+    .book-author {
+      font-style: italic; 
+    }
+  }
+  
+  .book-description {
+    display: none; 
+  }
+    
+}
+
 .row {
 	padding: 5px;
 	display: table;
