@@ -21,6 +21,10 @@
     <div class="book-info">
       <h2 class="book-title">{{book.attributes.title}}</h2>
       <p class="book-author">{{book.attributes.author}}</p>
+      <div ng-if="book.attributes.available==false">
+            <button class="disabledButton">{{'borrow' | translate}}
+            </button>
+        </div>
       <div ng-if="book.attributes.available==true">
             <button class="saveButton"  ng-click="borrow(book.id);">{{'borrow' | translate}}
             </button>

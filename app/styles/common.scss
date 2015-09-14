@@ -15,10 +15,10 @@
 	
 	background-color: red;
 	border-radius:5px;
-	border:1px solid #4c4c4c;
+	border:1px solid darkgrey;
 	display:inline-block;
 	cursor:pointer;
-	color:#ffffff;
+	color:white;
 	font-family:Arial;
 	font-size:15px;
 	font-weight:bold;
@@ -26,20 +26,34 @@
 	text-decoration:none;
 }
 .returnButton:hover {
-	background-color:#cc0000;
+	background-color:darkred;
 }
 .returnButton:active {
 	position:relative;
 	top:1px;
 }
+.disabledButton {
+	
+	background-color: grey;
+	color: lightgrey; 
+	border-radius:5px;
+	border:1px solid darkgrey;
+	display:inline-block;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:5px 18px;
+	text-decoration:none;
+}
+
 .saveButton {
 	
 	background-color: green;
 	border-radius:5px;
-	border:1px solid #4c4c4c;
+	border:1px solid darkgrey;
 	display:inline-block;
 	cursor:pointer;
-	color:#ffffff;
+	color:white;
 	font-family:Arial;
 	font-size:13px;
 	font-weight:bold;
@@ -47,7 +61,7 @@
 	text-decoration:none;
 }
 .saveButton:hover {
-	background-color:#006600;
+	background-color:darkgreen;
 }
 .saveButton:active {
 	position:relative;
