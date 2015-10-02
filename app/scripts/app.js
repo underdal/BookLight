@@ -23,19 +23,20 @@ var bookLightApp = angular.module('bookLightApp', [
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/book.html',
-        controller: 'BookCtrl',
-        controllerAs: 'book'
+        templateUrl: 'views/books.html',
+        controller: 'BookShelfCtrl'
       })
       .when('/newbook', {
         templateUrl: 'views/newbook.html',
-        controller: 'NewbookCtrl',
-        controllerAs: 'newbook'
+        controller: 'NewbookCtrl'
       })
       .when('/mybooks', {
         templateUrl: 'views/mybooks.html',
-        controller: 'BookCtrl',
-        controllerAs: 'mybooks'
+        controller: 'BookShelfCtrl'
+      })
+      .when('/book/:bookId', {
+        templateUrl: 'views/book.html',
+        controller: 'BookShelfCtrl'
       })
       .otherwise({
         redirectTo: '/'

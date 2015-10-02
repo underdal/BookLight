@@ -81,6 +81,24 @@ bookLightApp.service('BookService',
 			$http.get('https://www.googleapis.com/books/v1/volumes?q='+query).
 			  then(function(response) {
 			  	callback(response.data.items);
+			  	console.log(response.data.items);
+			  }, function(response) {
+			  	return ["No books found..."];
+			  });
+				}else{
+				return [];
+			}
+	};
+
+	this.getBookIsbn = function(query, callback){
+		//Get json from http books...
+		if( query && query.length > 0){
+			$http.get('https://www.googleapis.com/books/v1/volumes?q='+query).
+			  then(function(response) {
+			  	callback(response.data.items);
+			  	console.log("AAA");
+			  	console.log(response.data.items);
+
 			  }, function(response) {
 			  	return ["No books found..."];
 			  });

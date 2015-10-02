@@ -10,5 +10,5 @@ bookLightApp.filter('myBooksFilter', function(){
 			}
 			return myBooks;
 		}
-	}
+	};
 });

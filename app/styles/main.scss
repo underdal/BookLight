@@ -24,6 +24,12 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
+.layer{
+    background-color: white; 
+    z-index: 900;
+  opacity: 0.93;
+
+}
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -81,7 +87,8 @@ body {
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 730px;
+    width: 100%;
+    //max-width: 730px;
   }
 
   /* Remove the padding we set earlier */

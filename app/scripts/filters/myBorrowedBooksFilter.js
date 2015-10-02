@@ -10,5 +10,5 @@ bookLightApp.filter('myBorrowedBooksFilter', function(){
 			}
 			return myBooks;
 		}
-	}
+	};
 });

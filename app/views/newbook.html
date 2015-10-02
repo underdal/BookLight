@@ -25,7 +25,7 @@
                 <div class="row">
                     <div class="col-xs-6 col-sm-3">{{'title' | translate}}</div>
                     <div class="col-xs-6 col-sm-9">
-                        <input type="text" maxlength="50" style="width:100%" class="form-control" ng-model="formTitle" ng-change="titleInputDidChange()" id="newBookTitle" name="title" required>
+                        <input type="text" maxlength="100" style="width:100%" class="form-control" ng-model="formTitle" ng-change="titleInputDidChange()" id="newBookTitle" name="title" required>
                         <ul id="bookDropdown" class="list-group dropdown" ng-if="matchingBooks && matchingBooks.length>0">
                             <li class="list-group-item dropdown-item" ng-click="changeValue(item)" ng-repeat="item in matchingBooks">
                                 {{item.volumeInfo.title}}
@@ -36,7 +36,13 @@
                 <div class="row">
                     <div class="col-xs-6 col-sm-3">{{'author' | translate}}</div>
                     <div class="col-xs-6 col-sm-9">
-                        <input type="text" maxlength="50" style="width:100%" class="form-control" ng-model="formAuthor" name="author" required></div>
+                        <input type="text" maxlength="50" style="width:100%" class="form-control" ng-model="formAuthor" name="author" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-3">{{'isbn' | translate}}</div>
+                    <div class="col-xs-6 col-sm-9">
+                        <input type="text" maxlength="50" style="width:100%" class="form-control" ng-model="formIsbn" name="isbn" required></div>
                     </div>
                     <div class="row">
                         <div class="col-xs-12 col-sm-9 col-sm-offset-3">{{formDescription}}</div>
@@ -50,7 +56,7 @@
                     </div>
                     <div class="row">
                         <div class="col-xs-2 col-xs-offset-9 col-sm-1 col-sm-offset-9">
-                            <button class="saveButton" title="Add" style="cursor:pointer" ng-click="addNewbook(formTitle, formAuthor, formDescription, office.office, formImgSrc);" ng-disabled="addbookForm.$invalid">{{'save' | translate}}
+                            <button class="saveButton" title="Add" style="cursor:pointer" ng-click="addNewbook(formTitle, formAuthor, formIsbn, formDescription, office.office, formImgSrc);" ng-disabled="addbookForm.$invalid">{{'save' | translate}}
                             </button>
                         </div>
                     </div>
@@ -59,7 +65,7 @@
                 <div class="col-sm-3">
                     <img ng-src="{{formImgSrc}}" style="width:100px;height:140px;">
                 </div>
-                <!--button ng-click="pressedSave(book);" ng-controller="BookCtrl">Test</button-->
+            
 
             </div>
         </div>
