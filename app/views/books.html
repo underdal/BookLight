@@ -14,24 +14,27 @@
 </div>
 
 <ul class="books">
-  <li ng-repeat="book in books | filter: search | orderBy: 'attributes.title'" class="book col-sm-2 col-xs-4 clearfix">
+  <li ng-repeat="book in books | filter: search | orderBy: 'attributes.title'" class="book col-md-2 col-sm-3 col-xs-6 clearfix">
+    <div>
+        <div class="book-image">
     <div class="book-cover"><a ng-href="#/book/{{book.attributes.isbn}}">
       <img ng-src="{{book.attributes.cover}}" class="image img-responsive"> </a>     
     </div>
+    </div>
     <div class="book-info">
+        <div class="book-attrs">
       <h2 class="book-title">{{book.attributes.title}} </h2>
       <p class="book-author">{{book.attributes.author}}</p>
+      </div>
       <div ng-if="book.attributes.available==false">
-            <button class="disabledButton">{{'borrow' | translate}}
+            <button class="buttons disabledButton">{{'borrow' | translate}}
             </button>
         </div>
       <div ng-if="book.attributes.available==true">
-            <button class="saveButton"  ng-click="borrow(book.id);">{{'borrow' | translate}}
+            <button class="buttons saveButton"  ng-click="borrow(book.id);">{{'borrow' | translate}}
             </button>
         </div>
     </div>
-    <div class="book-description">
-      {{book.attributes.description}}
     </div>
   </li>
 </ul>

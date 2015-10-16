@@ -11,57 +11,54 @@
 	background-color: aliceblue;
     
 }
-.returnButton {
-	
-	background-color: red;
-	border-radius:5px;
-	border:1px solid darkgrey;
+
+
+.buttons {
+	border-radius:2px;
+	border:0px;
 	display:inline-block;
 	cursor:pointer;
 	color:white;
+	width: 100%;
 	font-family:Arial;
 	font-size:15px;
 	font-weight:bold;
 	padding:3px 7px;
 	text-decoration:none;
+	&.returnButton{
+		background-color: #8C508C;
+		margin-bottom: 5px;
+	}
+	&.deleteButton{
+		background-color: #E74C3C;
+	}
+	&.disabledButton{
+		background-color: grey;
+		color: lightgrey; 
+	}
+	&.saveButton{
+		background-color:#2ECC71; 
+	}
+	
+}
+
+.deleteButton:hover {
+	background-color:#B93D30;
+}
+.deleteButton:active {
+	position:relative;
+	top:1px;
 }
 .returnButton:hover {
-	background-color:darkred;
+	background-color:#623862;
 }
 .returnButton:active {
 	position:relative;
 	top:1px;
 }
-.disabledButton {
-	
-	background-color: grey;
-	color: lightgrey; 
-	border-radius:5px;
-	border:1px solid darkgrey;
-	display:inline-block;
-	font-family:Arial;
-	font-size:13px;
-	font-weight:bold;
-	padding:5px 18px;
-	text-decoration:none;
-}
 
-.saveButton {
-	
-	background-color: green;
-	border-radius:5px;
-	border:1px solid darkgrey;
-	display:inline-block;
-	cursor:pointer;
-	color:white;
-	font-family:Arial;
-	font-size:13px;
-	font-weight:bold;
-	padding:5px 18px;
-	text-decoration:none;
-}
 .saveButton:hover {
-	background-color:darkgreen;
+	background-color:#25A35A;
 }
 .saveButton:active {
 	position:relative;
@@ -71,8 +68,13 @@
 	padding: 15px;
 	&.borrowedBy{
 		float:right;
-
 	}
+}
+.available-text{
+	font-weight: bold;
+}
+.if-available{
+	height:52px;
 }
 
 .image{

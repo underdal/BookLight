@@ -81,7 +81,6 @@ bookLightApp.service('BookService',
 			$http.get('https://www.googleapis.com/books/v1/volumes?q='+query).
 			  then(function(response) {
 			  	callback(response.data.items);
-			  	console.log(response.data.items);
 			  }, function(response) {
 			  	return ["No books found..."];
 			  });
@@ -96,9 +95,6 @@ bookLightApp.service('BookService',
 			$http.get('https://www.googleapis.com/books/v1/volumes?q='+query).
 			  then(function(response) {
 			  	callback(response.data.items);
-			  	console.log("AAA");
-			  	console.log(response.data.items);
-
 			  }, function(response) {
 			  	return ["No books found..."];
 			  });

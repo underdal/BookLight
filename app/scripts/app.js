@@ -34,7 +34,7 @@ var bookLightApp = angular.module('bookLightApp', [
         templateUrl: 'views/mybooks.html',
         controller: 'BookShelfCtrl'
       })
-      .when('/book/:bookId', {
+      .when('/book/:bookISBN', {
         templateUrl: 'views/book.html',
         controller: 'BookShelfCtrl'
       })

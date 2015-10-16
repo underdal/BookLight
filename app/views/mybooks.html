@@ -1,24 +1,76 @@
 <h3>{{'my_books' | translate}}</h3>
-<table class="">
-    <tr style="width:100%">
-          <td style="width:10%">
-            <span class="cell text-header"></span>
-        </td>
-        <td style="width:25%">
-            <span class="cell text-header">{{'title' | translate}}</span>
-        </td>
+<ul class="books">
+    <li ng-repeat="book in books | myBooksFilter"  class="book col-md-2 col-sm-3 col-xs-6 clearfix">
+        <div>
+        <div class="book-image">
+            <div class="book-cover"><a ng-href="#/book/{{book.attributes.isbn}}">
+                <img ng-src="{{book.attributes.cover}}" class="image img-responsive"> 
+            </a>     
+        </div>
+    </div>
+    <div class="book-info">
+        <h2 class="book-title">{{book.attributes.title}} </h2>
+        <p class="book-author">{{book.attributes.author}}</p>
+        <div ng-if="book.attributes.available==false">
+            <div class="book-title">{{'borrowed_by' | translate}}: {{book.attributes.borrowedBy}} </div>
+            <button class="buttons returnButton" title="Return" style="cursor:pointer" ng-click="returnBook(book.id);">{{'return_book' | translate}}
+            </button>
+        </div>
+        <div class="if-available" ng-if="book.attributes.available==true">
+            <div class="available-text">{{'available' | translate}}</div>
+        </div>
+        <button class="buttons deleteButton" title="delete" style="cursor:pointer" ng-click="delete(book.id);">{{'delete_book' | translate}}
+        </button>
 
-        <td style="width:25%">
-            <span class="cell text-header">{{'author' | translate}}</span>
-        </td>
-      
-        <td style="width:20%">
-            <span class="cell text-header">{{'borrowed_by' | translate}}</span>
-        </td>
-        <td style="width:10%">
-            <span class="cell text-header right">{{'availability' | translate}}</span>
-        </td>
-    </tr>
+    </div>
+    </div>
+</li>
+</ul>
+
+<h3>{{'my_borrowed_books' | translate}}</h3>
+<ul class="books">
+    <li ng-repeat="book in books | myBorrowedBooksFilter" class="book col-md-2 col-sm-3 col-xs-6 clearfix">
+         <div>
+        <div class="book-image">
+        <div class="book-cover"><a ng-href="#/book/{{book.attributes.isbn}}">
+            <img ng-src="{{book.attributes.cover}}" class="image img-responsive"> 
+        </a>     
+    </div>
+</div>
+    <div class="book-info">
+        <h2 class="book-title">{{book.attributes.title}} </h2>
+        <p class="book-author">{{book.attributes.author}}</p>
+        <h3 class="book-title">{{'owner' | translate}}: {{book.attributes.owner}} </h3>
+        <button class="buttons returnButton" title="Return" style="cursor:pointer" ng-click="returnBook(book.id);">{{'return_book' | translate}}
+        </button>
+    </div>
+</div>
+</li>
+</ul>
+
+
+
+
+<!--table class="">
+    <tr style="width:100%">
+      <td style="width:10%">
+        <span class="cell text-header"></span>
+    </td>
+    <td style="width:25%">
+        <span class="cell text-header">{{'title' | translate}}</span>
+    </td>
+
+    <td style="width:25%">
+        <span class="cell text-header">{{'author' | translate}}</span>
+    </td>
+
+    <td style="width:20%">
+        <span class="cell text-header">{{'borrowed_by' | translate}}</span>
+    </td>
+    <td style="width:10%">
+        <span class="cell text-header right">{{'availability' | translate}}</span>
+    </td>
+</tr>
 </table>
 <table style = "width: 100%">
     <tr ng-repeat="book in books | myBooksFilter" class="book-table">
@@ -35,7 +87,7 @@
         </td>
         
         <td class="padding" style="width:15%">
-            {{book.borrowedBy.firstName}} {{book.attributes.borrowedBy}}
+            {{book.borrowedBy}} {{book.attributes.borrowedBy}}
         </td>
         <td style="width:10%">
             <button class="returnButton" title="Return" style="cursor:pointer" ng-click="returnBook(book.id);">{{'return_book' | translate}}
@@ -52,9 +104,9 @@
             <span class="glyphicon large red glyphicon-remove"></span>
         </td>
     </tr>
-</table>
+</table-->
 
-<h3>{{'my_borrowed_books' | translate}}</h3>
+<!--h3>{{'my_borrowed_books' | translate}}</h3>
 <table class="">
     <tr style="width:100%">
         <td style="width:10%">
@@ -91,7 +143,7 @@
         </td>
         
         <td class="padding" style="width:20%">
-           
+
             {{book.owner.firstName}} {{book.attributes.owner}}
         </td>
         
@@ -100,4 +152,4 @@
             </button>
         </td>
     </tr>
-</table>
+</table-->

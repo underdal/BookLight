@@ -6,6 +6,7 @@ bookLightApp.config(function($translateProvider) {
     add_book: 'Add book',
     author: 'Author',
     availability: 'Availability', 
+    available: 'Available',
     borrow: 'Borrow',
     borrowed_by: 'Borrowed by',
     delete_book: 'Delete book',
@@ -20,7 +21,8 @@ bookLightApp.config(function($translateProvider) {
     save: 'Save',
     saved_book_error: 'An error occured, try again',
     saved_book_success:'Your book has been saved',
-    title: 'Title'
+    title: 'Title',
+    id: 'ID'
 
   });
   $translateProvider.preferredLanguage('en');

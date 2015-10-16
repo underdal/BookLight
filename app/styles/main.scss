@@ -19,10 +19,11 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 body {
   padding: 0;
-  background-image: url("../images/books.jpeg");
+//  background-image: url("../images/books.jpeg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  background-color: white; 
 }
 .layer{
     background-color: white; 

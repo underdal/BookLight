@@ -1,17 +1,6 @@
 /* Fallback styles */
-.book-cover {
-  display: inline-block;
-  box-shadow: 5px 5px 20px #333;
-}
 
-.book-cover img { 
-  vertical-align: middle; 
-  width: 100%;
-}
 
-.book-cover {
-  width: 75%; 
-}
 
 /*
  *  In order for this to work, you must use Modernizer
@@ -43,6 +32,25 @@
 
 .csstransforms3d  .book-cover img {
   position: relative;
+}
+
+ .book-cover {
+  positon: absolute;
+  display: inline-block;
+  box-shadow: 5px 5px 20px #333;
+  width: 75%;
+}
+ 
+.book-cover img { 
+  vertical-align: middle; 
+  width: 100%;
+}
+
+.book-image{
+max-height: 150px;
+max-width: 175px;
+height: 200px; 
+display: inline-block;
 }
 
 .csstransforms3d  .book-cover:before,
@@ -80,23 +88,27 @@ ul.books {
     float: none;
     display: inline-block;
     text-align: center;
-    vertical-align: top;
-  }
-  .book-cover {
-    display: inline-block;    
+    margin-top: 30px;
+    margin-bottom: 30px;
     vertical-align: top;
   }
   
   .book-info {
     text-align: center;
+
+    .book-attrs{
+      height:70px;
+    }
     
     .book-title {
       font-size: 14px;
       font-weight: bold;
+      height: 20px;
     }
     
     .book-author {
       font-style: italic; 
+      height: 20px;
     }
   }
   
