@@ -4,12 +4,16 @@ bookLightApp.controller('BookShelfCtrl', ['$scope','BookService', '$routeParams'
 	function ($scope, BookService, $routeParams) {
    $scope.booksWithData = [];
 
-
+$scope.getBooks = function(){
+  console.log("Getting books first");
    BookService.books(function(data){
      console.log(data);
      $scope.books = data;
+
     // $scope.getBooksData($scope.books);
    });
+ };
+ $scope.getBooks();
 /* this part collects data from the google api after getting the id's from crowsource. This is not working at the mmoment 
   $scope.getBooksData = function(data){
     var booksWithData = data;
@@ -49,6 +53,8 @@ $scope.delete = function(bookID){
     if (successful){
         // add code to display successful save
         $scope.showSuccessAlert = true;
+        console.log("updating books");
+         $scope.getBooks();
       }
       else {
         // add code to display failure
