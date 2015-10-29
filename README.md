@@ -6,7 +6,14 @@ Gives an overview of books in your network as well as your own books and the boo
 
 AngularJS, less, Parse (use your own parse keys)
 
-setUp: 
-You need to have compass installed
-npm install 
-bower install 
+###setUp: 
+You need to have `compass`, `bower` and `grunt` globally installed
+
+cd into the repo
+#####run: 
+
+`npm install`  
+
+`bower install`  
+
+to run the app run `grunt serve:local`
