@@ -1,25 +1,36 @@
 
-<div class="col-sm-3">
-    <img ng-src="{{bookInfo.imageLinks.smallThumbnail}}" style="width:100px;height:140px;">
+<div class="col-sm-3 col-xs-12">
+	<div class="book single-book book-image">
+            <div class="book-cover">
+              <img ng-src="{{bookInfo.imageLinks.smallThumbnail}}" class="image img-responsive">    
+          </div>
+      </div>
+
+	<!--img ng-src="{{bookInfo.imageLinks.smallThumbnail}}" style="width:100px;height:140px;"-->
+	
 </div>
+<div class="col-sm-9 col-xs-12">
 <div>
-    <h3>{{bookInfo.title}}</h3> 
+	<h3>{{bookInfo.title}}</h3> 
 </div>
+<p>
 <div>
-    {{authors}}
+	{{authors}}
 </div>
 <div>Owner: {{books[0].attributes.title}}
 </div>
 <div>Borrowed by: {{book.borrowedBy}}
 </div>
 <div ng-if="book.attributes.available==false">
-    <button class="disabledButton">{{'borrow' | translate}}
-    </button>
+	<button class="disabledButton">{{'borrow' | translate}}
+	</button>
 </div>
 <div ng-if="book.attributes.available==true">
-    <button class="saveButton"  ng-click="borrow(book.id);">{{'borrow' | translate}}
-    </button>
+	<button class="saveButton"  ng-click="borrow(book.id);">{{'borrow' | translate}}
+	</button>
 </div>
-<div>
-    {{bookInfo.description}}
+</p>
+<p>
+	{{bookInfo.description}}
+</p>
 </div>

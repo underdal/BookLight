@@ -7,7 +7,6 @@
 
         <div class="col-xs-12 col-md-3" ng-controller="NewbookCtrl">
             <select class="form-control searching" ng-model="office" style="width: 100%" ng-options="office.office for office in offices | orderBy: 'office'" ng-init="office=offices[0]" name="office">
-                <!--option value=""></option-->
             </select>
         </div>
     </div>
@@ -17,91 +16,24 @@
   <li ng-repeat="book in books | filter: search | orderBy: 'attributes.title'" class="book col-md-2 col-sm-3 col-xs-6 clearfix">
     <div>
         <div class="book-image">
-    <div class="book-cover"><a ng-href="#/book/{{book.attributes.isbn}}">
-      <img ng-src="{{book.attributes.cover}}" class="image img-responsive"> </a>     
-    </div>
-    </div>
-    <div class="book-info">
+            <div class="book-cover"><a ng-href="#/book/{{book.attributes.isbn}}">
+              <img ng-src="{{book.attributes.cover}}" class="image img-responsive"> </a>     
+          </div>
+      </div>
+      <div class="book-info">
         <div class="book-attrs">
-      <h2 class="book-title">{{book.attributes.title}} </h2>
-      <p class="book-author">{{book.attributes.author}}</p>
+          <h2 class="book-title">{{book.attributes.title}} </h2>
+          <p class="book-author">{{book.attributes.author}}</p>
       </div>
       <div ng-if="book.attributes.available==false">
-            <button class="buttons disabledButton">{{'borrow' | translate}}
-            </button>
-        </div>
-      <div ng-if="book.attributes.available==true">
-            <button class="buttons saveButton"  ng-click="borrow(book.id);">{{'borrow' | translate}}
-            </button>
-        </div>
+        <button class="buttons disabledButton">{{'borrow' | translate}}
+        </button>
     </div>
+    <div ng-if="book.attributes.available==true">
+        <button class="buttons saveButton"  ng-click="borrow(book.id);">{{'borrow' | translate}}
+        </button>
     </div>
-  </li>
+</div>
+</div>
+</li>
 </ul>
-
-<!--table class="topmargin">
-    <tr style="width:100%">
-        <td style="width:12%">
-            <span class="cell text-header"></span>
-        </td>
-        <td style="width:33%">
-            <span class="cell text-header">{{'title' | translate}}</span>
-        </td>
-        <td style="width:25%">
-            <span class="cell text-header">{{'author' | translate}}</span>
-        </td>
-        <td style="width:20%">
-            <span class="cell text-header">{{'owner' | translate}}</span>
-        </td>
-        <td style="width:10%">
-            <span class="cell text-header right">{{'availability' | translate}}</span>
-        </td>
-    </tr>
-</table>
-<table style = "width: 100%" ng-repeat="book in books | filter: search | orderBy: 'attributes.title'">
-    <tr  class="book-table" ng-class="!isCollapsed ? '' : 'subheading-styling'" ng-click="isCollapsed = !isCollapsed">
-        <td class="padding" style="width:12%">
-            <img ng-src="{{book.attributes.cover}}" class="image"> 
-        </td>
-        <td class="padding" style="width:33%">
-            <span class="cell text-title">{{book.attributes.title}} </a></span>
-        </td>
-
-        <td class="padding" style="width:25%">
-            <span class="cell text-title">{{book.attributes.author}} </a></span>
-        </td>
-        
-        <td class="padding" style="width:20%">
-            {{book.owner.firstName}} {{book.attributes.owner}}
-        </td>
-        <td ng-if="book.attributes.available==true" style="width:10%">
-            <span class="glyphicon large green glyphicon-ok"></span>
-        </td>
-        <td ng-if="book.attributes.available==false" style="width:10%">
-            <span class="glyphicon large red glyphicon-remove"></span>
-        </td>
-    </tr>
-
-
-    <tr collapse="!isCollapsed">
-        <td>
-
-        </td>
-        <td colspan="2" class="collapse-text">
-            <b>{{'description' | translate}}:</b> </br> </br>
-            {{book.attributes.description}}
-        </td>
-        <td ng-if="book.attributes.available ==true" colspan="1">
-        </td>
-
-        <td ng-if="book.attributes.available==true">
-            <button class="saveButton"  ng-click="borrow(book.id);">{{'borrow' | translate}}
-            </button>
-        </td>
-        <td ng-if="book.attributes.available==false" colspan="2" style="float:right" class="collapse-text">
-         <b> {{'borrowed_by' | translate}} </br> {{book.borrowedBy.firstName}} {{book.attributes.borrowedBy}} </b>
-     </td>
- </tr>
-</table-->
-
-
