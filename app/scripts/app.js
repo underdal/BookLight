@@ -22,6 +22,10 @@ var bookLightApp = angular.module('bookLightApp', [
   ])
   .config(function ($routeProvider) {
     $routeProvider
+      .when('/welcome', {
+        templateUrl: 'views/welcome.html',
+        controller: 'LoginCtrl'
+      })
       .when('/', {
         templateUrl: 'views/books.html',
         controller: 'BookShelfCtrl'

@@ -1,0 +1,45 @@
+<div ng-controller="NewbookCtrl">
+	<h3>Log in</h3> 
+</div>
+<form name="loginForm" ng-model="loginForm" ng-class="{'submit-clicked': submitFailed === true}">
+	<div class="table">
+		<div class="section">
+			<div class="row">
+				<div class="col-sm-9">
+					<div class="row">
+					<div class="col-xs-6 col-sm-offset-6 col-sm-3">Not registered yet?</div>
+					 <div class="col-xs-12 col-sm-3">
+							<button class="buttons saveButton" title="goToRegister" style="cursor:pointer" ng-disabled="loginForm.$invalid">
+
+								Register here
+							</button>
+						</div>
+						</div>
+
+					<div class="row">
+						<div class="col-xs-6 col-sm-3">email</div>
+						<div class="col-xs-6 col-sm-9">
+							<input type="text" maxlength="100" style="width:100%" class="form-control" ng-model="formUserName" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-6 col-sm-3">password</div>
+						<div class="col-xs-6 col-sm-9">
+							<input type="text" maxlength="50" style="width:100%" class="form-control" ng-model="formPwd" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12 col-sm-3 col-sm-offset-9">
+							<button class="buttons saveButton" title="Login" style="cursor:pointer" ng-disabled="loginForm.$invalid">
+
+								Login
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+
+
