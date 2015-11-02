@@ -14,22 +14,6 @@ $scope.getBooks = function(){
    });
  };
  $scope.getBooks();
-/* this part collects data from the google api after getting the id's from crowsource. This is not working at the mmoment 
-  $scope.getBooksData = function(data){
-    var booksWithData = data;
-    console.log($scope.booksWithData);
-    for(var i = 0; i< $scope.booksWithData.length; i++){
-      BookService.getBookIsbn($scope.booksWithData[i].id, function(data){
-        console.log("ÅÅÅ");
-        console.log($scope.booksWithData);
-        var info = data[0].volumeInfo;
-        //$scope.booksWithData[0].bookData =[];
-        booksWithData[i].bookData = info;
-        console.log($scope.booksWithData[i]);
-      });
-    }
-    $scope.books = booksWithData;
-  };*/
 
   /*  BookService.books(function(data){
      console.log(data);

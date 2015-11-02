@@ -69,38 +69,6 @@ bookLightApp.controller('NewbookCtrl', ['$scope', '$rootScope', '$http', '$resou
 
   };
 
-/*  $scope.addNewbook = function (titleName, ID, ISBN){
-
-   var dataObj = {
-      id: ID,
-      isbn: ISBN,
-      owner: "Anlaug Underdal",
-         available: true
-       };
-       console.log('pressed save ' + titleName);
-       var callback = function (successful)
-       {
-        if (successful){
-                    // add code to display successful save
-                    $scope.showSuccessAlert = true;
-                  }
-                  else {
-                    // add code to display failure
-                    $scope.showErrorAlert = true;
-                    
-                  }
-                };
-                BookService.saveBook(dataObj, callback);
-            // clear form
-            $scope.formTitle = null;
-            $scope.formAuthor = null; 
-            $scope.formIsbn = null; 
-            $scope.fornID = null;
-            $scope.formImgSrc = defaultImage;
-            $scope.matchingBooks =[];
-            $scope.formDescription = null;
-          }; */
-
   $scope.addNewbook = function (titleName, authorName, ISBN, location, bookCover){
 
     var dataObj = {
@@ -109,12 +77,11 @@ bookLightApp.controller('NewbookCtrl', ['$scope', '$rootScope', '$http', '$resou
       isbn: ISBN,
          //office: location,
         // description: bookDescription,
-         cover: bookCover, 
-         available: true
-       };
-       console.log('pressed save '+titleName);
-       var callback = function (successful)
-       {
+        cover: bookCover, 
+        available: true
+      };
+      console.log('pressed save '+titleName);
+      var callback = function (successful){
         if (successful){
                     // add code to display successful save
                     $scope.showSuccessAlert = true;
@@ -158,6 +125,5 @@ $scope.changeValue = function(bookInfo){
   console.log(bookInfo.volumeInfo);
 };
 
-    //add delete book 
 
-  }]);
+}]);
