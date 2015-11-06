@@ -1,44 +1,39 @@
 'use strict';
 
-bookLightApp.controller('BookShelfCtrl', ['$scope','BookService', '$routeParams', 
-	function ($scope, BookService, $routeParams) {
-   $scope.booksWithData = [];
+bookLightApp.controller('BookShelfCtrl', ['$scope','BookService', 
+	function ($scope, BookService) {
 
-$scope.getBooks = function(){
+    $scope.changeOffice = function(office){
+      $scope.office = office;
+    };
+   // Setting initial office Not best practice
+     var of = {office: "Oslo"};
+    $scope.changeOffice(of);
+
+var getBooks = function(){
   console.log("Getting books first");
    BookService.books(function(data){
      console.log(data);
      $scope.books = data;
-
-    // $scope.getBooksData($scope.books);
    });
  };
- $scope.getBooks();
+ getBooks();
+
 
   /*  BookService.books(function(data){
      console.log(data);
      $scope.books = data;
    });*/
 
-//Get more info about a spesific book when clicking on this book 
-var getBookInfo = function () {
-  if ($routeParams.bookISBN) {
-    BookService.getBookIsbn($routeParams.bookISBN, function(data){
-      $scope.bookInfo = data[0].volumeInfo;
-      $scope.authors = $scope.bookInfo.authors.join(", ");
-    });
-  }
-};
-getBookInfo();
-
 
 $scope.delete = function(bookID){
+ // BookService.deleteBook(bookID, callback);
   var callback = function (successful){
     if (successful){
         // add code to display successful save
         $scope.showSuccessAlert = true;
         console.log("updating books");
-         $scope.getBooks();
+         getBooks();
       }
       else {
         // add code to display failure
@@ -53,6 +48,7 @@ $scope.delete = function(bookID){
     var userName = 'Per Person'; 
     var callback = function (successful){
       if (successful){
+        getBooks();
       }
       else {
          // add code to display failure
@@ -67,6 +63,7 @@ $scope.delete = function(bookID){
     var userName = ""; 
     var callback = function (successful){
       if (successful){
+        getBooks();
       }
       else {
         // add code to display failure
@@ -76,6 +73,4 @@ $scope.delete = function(bookID){
     BookService.updateBook(bookID, available, userName, callback);
   };
 
-
-  $scope.isCollapsed = false;
 }]);

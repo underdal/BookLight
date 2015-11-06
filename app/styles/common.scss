@@ -89,3 +89,35 @@
 .topmargin{
 	margin-top:30px;
 }
+
+.navbar-user {
+	float: right;
+	display: block;
+	margin-top: 9px;
+	padding: 0px 15px !important;
+}
+.user-name {
+	color: #777;
+	line-height: 20px;
+	padding: 0px 0px !important;
+	background-color: transparent;
+	font-size: 12px;
+}
+.user-name:hover{
+		text-decoration: none;
+		background-color: transparent !important;
+		color: #777;
+	}
+.logout{
+	color: #777;
+	text-align: end;
+	font-size: 12px;
+	line-height: 20px;
+	padding: 0px 0px !important;
+	background-color: transparent;
+}
+.logout:hover{
+		text-decoration: none;
+		background-color: transparent !important;
+		color: #555;
+	}

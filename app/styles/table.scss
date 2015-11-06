@@ -44,6 +44,7 @@
 .book-cover img { 
   vertical-align: middle; 
   width: 100%;
+  max-height: 145px;
 }
 
 .book-image{
@@ -51,6 +52,9 @@ max-height: 150px;
 max-width: 175px;
 height: 200px; 
 display: inline-block;
+}
+.add-margin{
+  margin: 10px;
 }
 
 .csstransforms3d  .book-cover:before,

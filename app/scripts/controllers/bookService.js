@@ -1,7 +1,7 @@
 'use strict';
 
 bookLightApp.service('BookService',
-	['$resource', '$http','booksResource', function($resource, $http, booksResource){
+	['$resource', '$http', function($resource, $http){
 
 	this.books = function(callback, param){
 		var query = new Parse.Query("books");
@@ -45,21 +45,23 @@ bookLightApp.service('BookService',
 		});
 	};
 
-	this.deleteBook = function(bookID){
+	this.deleteBook = function(bookID, callback){
 		var Books = Parse.Object.extend("books");
 		var query = new Parse.Query(Books);
 
 		query.get(bookID, {
 			success: function(toBeDeleted){
 				toBeDeleted.destroy({});
+				callback(query);
 			},
-			error: function(object, error){
+			error: function(err){
+				console.log(err);
 
 			}
 		});
 	};
 
-	this.updateBook = function(bookID, availability, borrowerName){
+	this.updateBook = function(bookID, availability, borrowerName, callback){
 		var Books = Parse.Object.extend("books");
 		var books = new Books();
 		books.id = bookID;
@@ -67,9 +69,12 @@ bookLightApp.service('BookService',
 		books.set("borrowedBy", borrowerName);
 		books.save(null, {
 			success: function(books){
+				console.log("HEI");
+				console.log(books);
+				callback(books);
 			},
-			error: function(books, error){
-
+			error: function(){
+				console.log("error");
 			}
 		});
 	};
@@ -81,7 +86,7 @@ bookLightApp.service('BookService',
 			$http.get('https://www.googleapis.com/books/v1/volumes?q='+query).
 			  then(function(response) {
 			  	callback(response.data.items);
-			  }, function(response) {
+			  }, function() {
 			  	return ["No books found..."];
 			  });
 				}else{
@@ -95,7 +100,7 @@ bookLightApp.service('BookService',
 			$http.get('https://www.googleapis.com/books/v1/volumes?q='+query).
 			  then(function(response) {
 			  	callback(response.data.items);
-			  }, function(response) {
+			  }, function() {
 			  	return ["No books found..."];
 			  });
 				}else{

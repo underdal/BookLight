@@ -1,4 +1,3 @@
-<div ng-controller="NewbookCtrl">
 	<h3>Log in</h3> 
 </div>
 <form name="loginForm" ng-model="loginForm" ng-class="{'submit-clicked': submitFailed === true}">
@@ -7,32 +6,38 @@
 			<div class="row">
 				<div class="col-sm-9">
 					<div class="row">
-					<div class="col-xs-6 col-sm-offset-6 col-sm-3">Not registered yet?</div>
-					 <div class="col-xs-12 col-sm-3">
-							<button class="buttons saveButton" title="goToRegister" style="cursor:pointer" ng-disabled="loginForm.$invalid">
-
-								Register here
-							</button>
-						</div>
-						</div>
-
-					<div class="row">
-						<div class="col-xs-6 col-sm-3">email</div>
-						<div class="col-xs-6 col-sm-9">
-							<input type="text" maxlength="100" style="width:100%" class="form-control" ng-model="formUserName" required>
+						<div class="col-xs-3">email</div>
+						<div class="col-xs-9">
+							<input type="email" name="email" maxlength="100" style="width:100%" class="form-control" ng-model="formEmail" required>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-xs-6 col-sm-3">password</div>
-						<div class="col-xs-6 col-sm-9">
-							<input type="text" maxlength="50" style="width:100%" class="form-control" ng-model="formPwd" required>
+						<div class="col-xs-3">password</div>
+						<div class="col-xs-9">
+							<input type="password" maxlength="50" style="width:100%" class="form-control" ng-model="formPwd" required>
 						</div>
 					</div>
-					<div class="row">
+					<div class="row" ng-if="loginForm.$invalid">
 						<div class="col-xs-12 col-sm-3 col-sm-offset-9">
-							<button class="buttons saveButton" title="Login" style="cursor:pointer" ng-disabled="loginForm.$invalid">
+							<button class="buttons disabledButton" title="Login">
 
 								Login
+							</button>
+						</div>
+					</div>
+					<div class="row" ng-if="loginForm.$valid">
+						<div class="col-xs-12 col-sm-3 col-sm-offset-9">
+							<button class="buttons saveButton" title="Login" ng-click="login(formEmail, formPwd, 'Anlaug Underdal')" ng-disabled="loginForm.$invalid">
+
+								Login
+							</button>
+						</div>
+					</div>
+					<div class="row" >
+						<div class="col-xs-6 col-sm-offset-6 col-sm-3">Not registered yet?</div>
+						<div class="col-xs-12 col-sm-3">
+							<button class="buttons returnButton" title="goToRegister" ng-click="showLogin(false)">
+								Register here
 							</button>
 						</div>
 					</div>

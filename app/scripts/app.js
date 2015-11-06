@@ -20,6 +20,34 @@ var bookLightApp = angular.module('bookLightApp', [
     'pascalprecht.translate'
 
   ])
+/*.config(function ($stateProvider, $urlRouteProvider) {
+    $stateProvider
+      .state('/welcome', {
+        templateUrl: 'views/welcome.html',
+        controller: 'LoginCtrl'
+      })
+      .state('/', {
+        templateUrl: 'views/books.html',
+        controller: 'BookShelfCtrl',
+        resolve:{}
+      })
+      .state('/newbook', {
+        templateUrl: 'views/newbook.html',
+        controller: 'NewbookCtrl'
+      })
+      .state('/mybooks', {
+        templateUrl: 'views/mybooks.html',
+        controller: 'BookShelfCtrl'
+      })
+      .state('/book/:bookISBN', {
+        templateUrl: 'views/book.html',
+        controller: 'BookShelfCtrl'
+      })
+      $urlRouteProvider.otherwise({
+        redirectTo: '/'
+      });
+  });*/
+
   .config(function ($routeProvider) {
     $routeProvider
       .when('/welcome', {
@@ -40,7 +68,7 @@ var bookLightApp = angular.module('bookLightApp', [
       })
       .when('/book/:bookISBN', {
         templateUrl: 'views/book.html',
-        controller: 'BookShelfCtrl'
+        controller: 'BookInfoCtrl'
       })
       .otherwise({
         redirectTo: '/'

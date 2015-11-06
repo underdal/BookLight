@@ -1,0 +1,68 @@
+	<h3>Register</h3> 
+</div>
+<form name="registerForm" ng-model="registerForm" ng-class="{'submit-clicked': submitFailed === true}">
+	<div class="table">
+		<div class="section">
+			<div class="row">
+				<div class="col-sm-9">
+					<div class="row">
+						<div class="col-xs-3">Email</div>
+						<div class="col-xs-9">
+							<input type="email" maxlength="50" style="width:100%" class="form-control" ng-model="formEmail" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-3">Full name</div>
+						<div class="col-xs-9">
+							<input type="text" maxlength="50" style="width:100%" class="form-control" ng-model="formName" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-3">Office</div>
+						<div class="col-xs-9" ng-controller="NewbookCtrl">
+							<select class="form-control searching" ng-model="office" style="width: 100%" ng-options="office.office for office in offices | orderBy: 'office'" name="office">
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-3">Password</div>
+						<div class="col-xs-9">
+							<input type="password" maxlength="20" style="width:100%" class="form-control" ng-model="formPwd" required>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-3">Confirm password</div>
+						<div class="col-xs-9">
+							<input type="password" maxlength="20" style="width:100%" class="form-control" ng-model="formPwd2" required>
+						</div>
+					</div>
+					<div class="row" ng-if="registerForm.$invalid">
+						<div class="col-xs-12 col-sm-3 col-sm-offset-9">
+							<button class="buttons disabledButton" title="Register">
+								Register
+							</button>
+						</div>
+					</div>
+					<div class="row" ng-if="registerForm.$valid">
+						<div class="col-xs-12 col-sm-3 col-sm-offset-9">
+							<button class="buttons saveButton" title="Register" ng-click="register(formEmail, formName, formPwd, formPwd2)" ng-disabled="registerForm.$invalid">
+								Register
+							</button>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-6 col-sm-offset-6 col-sm-3">Already registered?</div>
+						<div class="col-xs-12 col-sm-3">
+							<button class="buttons returnButton" title="goToLogin" ng-click="showLogin(true)">
+								Login here
+							</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+
+

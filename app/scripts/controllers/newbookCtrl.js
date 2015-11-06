@@ -30,6 +30,9 @@ bookLightApp.controller('NewbookCtrl', ['$scope', '$rootScope', '$http', '$resou
    },
    {
      office: 'Helsinki'
+   },
+   {
+    office: 'All'
    }
    ];
 
@@ -75,7 +78,7 @@ bookLightApp.controller('NewbookCtrl', ['$scope', '$rootScope', '$http', '$resou
       title: titleName,
       author: authorName,
       isbn: ISBN,
-         //office: location,
+      office: location,
         // description: bookDescription,
         cover: bookCover, 
         available: true
@@ -100,6 +103,7 @@ bookLightApp.controller('NewbookCtrl', ['$scope', '$rootScope', '$http', '$resou
             $scope.formImgSrc = defaultImage;
             $scope.matchingBooks =[];
             $scope.formDescription = null;
+            $scope.office = null;
           };
 
         //var res = $resource.post(addNewBook, dataObj);
