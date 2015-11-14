@@ -45,7 +45,7 @@
             </ul>
             <ul class="nav navbar-user">
               <li>
-                <span class="user-name">{{userName}}</span>
+                <span class="user-name">{{logedInCookie}}</span>
                 <a class="logout" href="#/welcome" ng-click="loginFunc(undefined, undefined)">Log out</a>
               </li>
             </ul>
@@ -107,6 +107,7 @@
         <script src="scripts/directives/loginDir.js"></script>
         <script src="scripts/directives/registerDir.js"></script>   
         <script src="scripts/controllers/bookService.js"></script>
+        <script src="scripts/controllers/authService.js"></script>
         <script src="scripts/controllers/bookInfoCtrl.js"></script>         
         <script src="scripts/controllers/bookShelfCtrl.js"></script>
         <script src="scripts/controllers/loginCtrl.js"></script>

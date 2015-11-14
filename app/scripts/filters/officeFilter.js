@@ -2,7 +2,7 @@
 bookLightApp.filter('OfficeFilter', function(){
 	return function(books, officeCode){
 		if(typeof books !== 'undefined'){
-			
+			console.log(officeCode);
 			if(officeCode.office === 'All'){
 				return books;
 			}

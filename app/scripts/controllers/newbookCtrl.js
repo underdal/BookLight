@@ -8,6 +8,8 @@ bookLightApp.controller('NewbookCtrl', ['$scope', '$rootScope', '$http', '$resou
     var defaultImage = "https://placeholdit.imgix.net/~text?txtsize=9&txt=100%C3%97140&w=100&h=140"; 
     $scope.formImgSrc = defaultImage; 
 
+   
+
 
     $scope.offices = [
     {
@@ -35,6 +37,21 @@ bookLightApp.controller('NewbookCtrl', ['$scope', '$rootScope', '$http', '$resou
     office: 'All'
    }
    ];
+
+    $scope.getInitOffice = function(){
+      var initOffice = $rootScope.countryCookie;
+      for (var i = 0; i < $scope.offices.length; i ++) {
+        if($scope.offices[i].office === initOffice){
+          $scope.office = $scope.offices[i];
+          break;
+        }
+        else{
+           $scope.office = $scope.offices[7];
+        }
+      } 
+    };
+
+     //$scope.office = $;
 
    function callbackForBooks(data){
     $scope.matchingBooks = data;

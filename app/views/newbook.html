@@ -50,7 +50,7 @@
                     <div class="row">
                         <div class="col-xs-3 col-sm-3">{{'office' | translate}}</div>
                         <div class="col-xs-9 col-sm-9">
-                            <select class="form-control" style="padding:0px" ng-model= "office" ng-options="office.office for office in offices | orderBy: 'office'" name="office">
+                            <select class="form-control" style="padding:0px" ng-model= "office" ng-options="office.office for office in offices | orderBy: 'office'"  ng-init="getInitOffice()" name="office">
                             </select>
                         </div>
                     </div>

@@ -1,14 +1,21 @@
 'use strict';
 
-bookLightApp.controller('BookShelfCtrl', ['$scope','BookService', 
-	function ($scope, BookService) {
+bookLightApp.controller('BookShelfCtrl', ['$rootScope', '$scope','BookService', 
+	function ($rootScope, $scope, BookService) {
 
-    $scope.changeOffice = function(office){
-      $scope.office = office;
+
+    $scope.changeOffice = function(){
+      var of = $rootScope.countryCookie;
+      console.log(of);
+      if(of === undefined){
+        $scope.office = {office: "All"};
+      }
+      else{
+        $scope.office = {office: of};
+      }
+      
     };
-   // Setting initial office Not best practice
-     var of = {office: "Oslo"};
-    $scope.changeOffice(of);
+    $scope.changeOffice();
 
 var getBooks = function(){
   console.log("Getting books first");
